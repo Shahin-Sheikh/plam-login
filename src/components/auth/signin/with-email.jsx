@@ -1,6 +1,7 @@
 import { HiOutlineMail } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import { InputField } from "../../ui/input-field";
 
 export function WithEmail() {
   const navigate = useNavigate();
@@ -20,10 +21,7 @@ export function WithEmail() {
       <div className="flex flex-col justify-center items-center w-full m-16">
         <div className="mb-6">
           <div className="w-35 h-25 flex items-center justify-center relative">
-            <img
-              src="/public/signin_logo.png"
-              alt="eBay Logo"
-            />
+            <img src="/logo.png" alt="Logo" />
           </div>
         </div>
 
@@ -34,16 +32,11 @@ export function WithEmail() {
           <span className="text-xl text-[#2979FF] font-bold">eBay.com</span>
         </div>
         <div>
-          <div className="flex items-center justify-center mb-4 relative">
-            <HiOutlineMail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-[336.3px] h-[56.5px] pl-12 p-[14px] bg-black/30 text-white rounded-[16px] 
-               border border-white/12 flex items-center 
-               box-border flex-none order-2 self-stretch grow-0"
-            />
-          </div>
+          <InputField
+            type="email"
+            placeholder="Enter your email"
+            icon={<HiOutlineMail size={23} />}
+          />
 
           <button className="w-full max-w-sm p-4 bg-[#2979FF] text-white rounded-lg mt-4">
             Continue
@@ -52,10 +45,7 @@ export function WithEmail() {
           <div className="mt-6 flex space-x-4 text-md justify-center">
             <p>
               New User?{" "}
-              <span
-                className="text-[#2979FF]"
-                onClick={() => navigate("/")}
-              >
+              <span className="text-[#2979FF]" onClick={() => navigate("/")}>
                 Create an account
               </span>
             </p>

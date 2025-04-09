@@ -1,31 +1,20 @@
 import { HiOutlineMail } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
 import { useLocation } from "react-router-dom";
+import { SecondaryButton } from "../../ui/secondary-button";
 
 export function CompleteAccount() {
   const location = useLocation();
   const selectedEmail = location.state?.selectedEmail || "";
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gradient-to-b text-white px-4">
-      <div className="flex items-center w-full max-w-sm m-8">
-        <div className="flex flex-col justify-center items-center p-0 gap-2 absolute w-9 h-9 left-7 top-11 bg-white/5 rounded-full">
-          <IoCloseOutline size={20} />
-        </div>
-        <div className="mt-2 ml-12">
-          <h1 className="text-xl font-semibold m-2 ml-16">
-            Sign in with PalmID
-          </h1>
-        </div>
-      </div>
+    <div className="min-h-screen flex flex-col items-center justify-between bg-gradient-to-b text-white px-4">
+      <div></div>
 
       <div className="flex flex-col justify-center items-center w-full m-16">
         <div className="mb-6">
           <div className="w-35 h-25 flex items-center justify-center relative">
-            <img
-              src="/public/signin_logo.png"
-              alt="eBay Logo"
-            />
+            <img src="/logo.png" alt="Logo" />
           </div>
         </div>
 
@@ -48,15 +37,9 @@ export function CompleteAccount() {
             />
           </div>
 
-          <button className="flex flex-col items-center px-6 py-4 gap-[0.25px] w-full h-[52px] bg-[#1E1E2A] rounded-[16px] mt-4 self-stretch flex-none order-0 grow-0 text-[#2979FF]">
-            Settings
-          </button>
-          <button className="flex flex-col items-center px-6 py-4 gap-[0.25px] w-full h-[52px] bg-[#1E1E2A] rounded-[16px] mt-4 self-stretch flex-none order-0 grow-0 text-[#2979FF]">
-            Delete Account
-          </button>
-          <button className="flex flex-col items-center px-6 py-4 gap-[0.25px] w-full h-[52px] bg-[#1E1E2A] rounded-[16px] mt-4 self-stretch flex-none order-0 grow-0 text-[#F44336]">
-            Sign Out
-          </button>
+          <SecondaryButton text="Settings" />
+          <SecondaryButton text="Delete Account" />
+          <SecondaryButton text="Sign Out" textColor="#F44336" />
         </div>
       </div>
     </div>

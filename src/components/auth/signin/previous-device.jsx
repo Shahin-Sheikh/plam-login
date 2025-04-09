@@ -29,10 +29,7 @@ export function PreviousDevice() {
       <div className="flex flex-col justify-center items-center w-full m-16">
         <div className="mb-6">
           <div className="w-35 h-25 flex items-center justify-center relative">
-            <img
-              src="/public/signin_logo.png"
-              alt="eBay Logo"
-            />
+            <img src="/logo.png" alt="Logo" />
           </div>
         </div>
 

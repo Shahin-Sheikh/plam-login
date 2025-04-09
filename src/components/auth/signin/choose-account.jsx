@@ -1,5 +1,6 @@
 import { GoArrowRight } from "react-icons/go";
 import { HiOutlineMail } from "react-icons/hi";
+import { PrimaryButton } from "../../ui/primary-button";
 
 export function ChooseAccount({
   emails,
@@ -41,16 +42,10 @@ export function ChooseAccount({
       </div>
 
       <div className="mt-6 flex space-x-4 text-md text-[#2979FF]">
-        <a
-          href="#"
-          className="underline decoration-[#2979FF]"
-        >
+        <a href="#" className="underline decoration-[#2979FF]">
           Privacy policy
         </a>
-        <a
-          href="#"
-          className="underline decoration-[#2979FF]"
-        >
+        <a href="#" className="underline decoration-[#2979FF]">
           Terms of service
         </a>
       </div>
