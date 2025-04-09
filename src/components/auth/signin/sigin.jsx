@@ -1,84 +1,74 @@
+import { GoArrowRight } from "react-icons/go";
+import { HiOutlineMail } from "react-icons/hi";
+import { IoCloseOutline } from "react-icons/io5";
+
 export function Signin() {
   return (
-    <div className="relative max-w-full mx-auto rounded-2xl border border-[#1E1E2E] bg-[#0B0B0F] overflow-hidden shadow-lg">
-      <button className="absolute top-4 left-4 text-gray-400">
-        <svg
-          width="24"
-          height="24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="feather feather-x"
-        >
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      </button>
+    <div className="min-h-screen flex flex-col items-center justify-between bg-gradient-to-b text-white px-4">
+      <div className="flex items-center w-full max-w-sm m-8">
+        <div className="flex flex-col justify-center items-center p-0 gap-2 absolute w-9 h-9 left-7 top-11 bg-white/5 rounded-full">
+          <IoCloseOutline size={20} />
+        </div>
+        <div className="mt-2 ml-12">
+          <h1 className="text-xl font-semibold m-2 ml-16">
+            Sign in with PalmID
+          </h1>
+        </div>
+      </div>
 
-      <div className="flex flex-col items-center justify-center pt-12 pb-6 px-4">
-        <h2 className="text-lg font-medium">Sign in with PalmID</h2>
-        <img src="/logo.svg" alt="PalmID Logo" className="w-24 mt-6 mb-2" />
-        <p className="text-sm text-center">Choose an account to continue to</p>
-        <a href="#" className="text-blue-400 text-sm font-medium mt-1">
-          eBay.com
-        </a>
+      <div className="flex flex-col justify-center items-center w-full m-16">
+        <div className="mb-6">
+          {/* Placeholder for the logo - replace with your actual logo */}
+          <div className="w-35 h-25 flex items-center justify-center relative">
+            <img
+              src="/public/signin_logo.png"
+              alt="eBay Logo"
+            />
+          </div>
+        </div>
 
-        <div className="w-full mt-6 space-y-3">
-          <button className="w-full flex items-center justify-between bg-[#1A1A26] rounded-xl px-4 py-3">
-            <div className="flex items-center space-x-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-5 h-5 text-white"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0v.75a.75.75 0 01-.75.75H3.75a.75.75 0 01-.75-.75v-.75"
-                />
-              </svg>
+        <div className="flex flex-col items-center mb-6">
+          <span className="text-xl text-[#FFFFFF] mb-2 font-bold">
+            Choose an account to continue to{" "}
+          </span>
+          <span className="text-xl text-[#2979FF] font-bold">eBay.com</span>
+        </div>
+
+        <div className="w-full max-w-sm space-y-3">
+          {/* Account 1 */}
+          <button className="w-full flex items-center justify-between bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition">
+            <div className="flex items-center">
+              <HiOutlineMail className="w-5 h-5 mr-3 text-gray-400" />
               <span>abcde@gmail.com</span>
             </div>
-            <span>&rarr;</span>
+            <GoArrowRight className="w-5 h-5 text-gray-400" />
           </button>
 
-          <button className="w-full flex items-center justify-between bg-[#1A1A26] rounded-xl px-4 py-3">
-            <div className="flex items-center space-x-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-5 h-5 text-white"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0v.75a.75.75 0 01-.75.75H3.75a.75.75 0 01-.75-.75v-.75"
-                />
-              </svg>
+          <button className="w-full flex items-center justify-between bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition">
+            <div className="flex items-center">
+              <HiOutlineMail className="w-5 h-5 mr-3 text-gray-400" />
               <span>1234@yahoo.com</span>
             </div>
-            <span>&rarr;</span>
+            <GoArrowRight className="w-5 h-5 text-gray-400" />
           </button>
 
-          <button className="w-full flex items-center justify-between bg-[#1A1A26] rounded-xl px-4 py-3">
+          <button className="w-full flex items-center justify-between bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition">
             <span>Use another account</span>
-            <span>&rarr;</span>
+            <GoArrowRight className="w-5 h-5 text-gray-400" />
           </button>
         </div>
 
-        <div className="flex justify-center space-x-4 text-xs text-gray-400 mt-6">
-          <a href="#" className="hover:underline">
+        <div className="mt-6 flex space-x-4 text-md text-[#2979FF]">
+          <a
+            href="#"
+            className="underline decoration-[#2979FF]"
+          >
             Privacy policy
           </a>
-          <a href="#" className="hover:underline">
+          <a
+            href="#"
+            className="underline decoration-[#2979FF]"
+          >
             Terms of service
           </a>
         </div>
