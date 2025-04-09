@@ -1,17 +1,10 @@
 import { HiOutlineMail } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-export function PreviousDevice() {
+export function CompleteAccount() {
   const location = useLocation();
-  const navigate = useNavigate();
   const selectedEmail = location.state?.selectedEmail || "";
-
-  const handleCompleteAccount = (email) => {
-    navigate("/complete-account", {
-      state: { selectedEmail: email },
-    });
-  };
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-gradient-to-b text-white px-4">
@@ -38,7 +31,7 @@ export function PreviousDevice() {
 
         <div className="flex flex-col items-center mb-6">
           <span className="text-xl text-[#FFFFFF] mb-2 font-bold">
-            Continue on your previous device
+            You have created a PalmID account with
           </span>
         </div>
         <div>
@@ -55,11 +48,14 @@ export function PreviousDevice() {
             />
           </div>
 
-          <button
-            className="w-full max-w-sm p-4 bg-[#2979FF] text-white rounded-lg mt-4"
-            onClick={() => handleCompleteAccount(selectedEmail)}
-          >
-            Continue to sign in {selectedEmail}
+          <button className="flex flex-col items-center px-6 py-4 gap-[0.25px] w-full h-[52px] bg-[#1E1E2A] rounded-[16px] mt-4 self-stretch flex-none order-0 grow-0 text-[#2979FF]">
+            Settings
+          </button>
+          <button className="flex flex-col items-center px-6 py-4 gap-[0.25px] w-full h-[52px] bg-[#1E1E2A] rounded-[16px] mt-4 self-stretch flex-none order-0 grow-0 text-[#2979FF]">
+            Delete Account
+          </button>
+          <button className="flex flex-col items-center px-6 py-4 gap-[0.25px] w-full h-[52px] bg-[#1E1E2A] rounded-[16px] mt-4 self-stretch flex-none order-0 grow-0 text-[#F44336]">
+            Sign Out
           </button>
         </div>
       </div>

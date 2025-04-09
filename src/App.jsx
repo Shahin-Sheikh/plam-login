@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CompleteAccount } from "./components/auth/signin/complete-account";
 import { PreviousDevice } from "./components/auth/signin/previous-device";
 import { Signin } from "./components/auth/signin/signin";
 import { WithEmail } from "./components/auth/signin/with-email";
@@ -21,6 +22,10 @@ function App() {
             <Route
               path="/previous-device"
               element={<PreviousDevice />}
+            />
+            <Route
+              path="/complete-account"
+              element={<CompleteAccount />}
             />
           </Routes>
         </div>
