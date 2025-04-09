@@ -49,7 +49,7 @@ export function PreviousDevice() {
           </div>
 
           <button className="w-full max-w-sm p-4 bg-[#2979FF] text-white rounded-lg mt-4">
-            Continue to sign in
+            Continue to sign in into {selectedEmail}
           </button>
         </div>
       </div>
