@@ -7,19 +7,24 @@ export function Signin() {
   const [emails, setEmails] = useState([]);
   const navigate = useNavigate();
 
-  document.cookie = "email_1=abcde@gmail.com; path=/";
-  document.cookie = "email_2=1234@yahoo.com; path=/";
-  document.cookie = "email_3=test@outlook.com; path=/";
-  document.cookie = "email_4=extra@email.com; path=/";
+  /* document.cookie = "email_1=user1@example.com; path=/";
+  document.cookie = "email_2=user2@example.com; path=/"; */
 
   const getEmailsFromCookies = () => {
-    const cookies = document.cookie.split(";");
+    const cookieString = document.cookie;
+
+    if (!cookieString) return [];
+
+    const cookieArray = cookieString.split(";");
     const emailList = [];
 
-    cookies.forEach((cookie) => {
-      const [name, value] = cookie.trim().split("=");
-      if (name.startsWith("email_")) {
-        emailList.push(decodeURIComponent(value));
+    cookieArray.forEach((cookie) => {
+      const trimmedCookie = cookie.trim();
+      if (trimmedCookie) {
+        const [name, value] = trimmedCookie.split("=");
+        if (name.startsWith("email_")) {
+          emailList.push(decodeURIComponent(value));
+        }
       }
     });
 
@@ -57,10 +62,7 @@ export function Signin() {
       <div className="flex flex-col justify-center items-center w-full m-16">
         <div className="mb-6">
           <div className="w-35 h-25 flex items-center justify-center relative">
-            <img
-              src="/logo.png"
-              alt="Logo"
-            />
+            <img src="/logo.png" alt="Logo" />
           </div>
         </div>
 
