@@ -44,6 +44,7 @@ export function Signin() {
           <IoCloseOutline
             size={20}
             className="text-[#FFFFFF]"
+            onClick={() => navigate("/cancelled")}
           />
         </div>
         <div className="mt-2 ml-12">

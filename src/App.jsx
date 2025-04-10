@@ -4,6 +4,7 @@ import { CompleteAccount } from "./components/auth/signin/complete-account";
 import { PreviousDevice } from "./components/auth/signin/previous-device";
 import { Signin } from "./components/auth/signin/signin";
 import { WithEmail } from "./components/auth/signin/with-email";
+import CancelledPage from "./components/ui/cancel-message";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
             <Route
               path="/complete-account"
               element={<CompleteAccount />}
+            />
+            <Route
+              path="/cancelled"
+              element={<CancelledPage />}
             />
           </Routes>
         </div>

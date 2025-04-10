@@ -19,7 +19,10 @@ export function PreviousDevice() {
     <div className="min-h-screen flex flex-col items-center bg-gradient-to-b text-white px-4">
       <div className="flex items-center w-full max-w-sm m-8">
         <div className="flex flex-col justify-center items-center p-0 gap-2 absolute w-9 h-9 left-7 top-11 bg-white/5 rounded-full">
-          <IoCloseOutline size={20} />
+          <IoCloseOutline
+            size={20}
+            onClick={() => navigate("/cancelled")}
+          />
         </div>
         <div className="mt-2 ml-12">
           <h1 className="text-xl font-semibold m-2 ml-16">
