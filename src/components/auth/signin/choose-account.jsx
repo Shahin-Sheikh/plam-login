@@ -1,6 +1,5 @@
 import { GoArrowRight } from "react-icons/go";
 import { HiOutlineMail } from "react-icons/hi";
-import { PrimaryButton } from "../../ui/primary-button";
 
 export function ChooseAccount({
   emails,
@@ -20,32 +19,38 @@ export function ChooseAccount({
           {emails.map((email, index) => (
             <button
               key={index}
-              className="w-full flex items-center justify-between bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition"
+              className="w-full flex items-center justify-between bg-[#1E1E2A] p-4 rounded-lg hover:bg-[#1E1E2A] transition"
               onClick={() => onPreviousDevice(email)}
             >
               <div className="flex items-center">
-                <HiOutlineMail className="w-5 h-5 mr-3 text-gray-400" />
+                <HiOutlineMail className="w-5 h-5 mr-3 text-[#FFFFFF]" />
                 <span>{email}</span>
               </div>
-              <GoArrowRight className="w-5 h-5 text-gray-400" />
+              <GoArrowRight className="w-5 h-5 text-[#FFFFFF]" />
             </button>
           ))}
         </div>
 
         <button
-          className="w-full flex items-center justify-between bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition"
+          className="w-full flex items-center justify-between bg-[#1E1E2A] p-4 rounded-lg hover:bg-[#1E1E2A] transition"
           onClick={onUseAnotherAccount}
         >
           <span>Use another account</span>
-          <GoArrowRight className="w-5 h-5 text-gray-400" />
+          <GoArrowRight className="w-5 h-5 text-[#FFFFFF]" />
         </button>
       </div>
 
-      <div className="mt-6 flex space-x-4 text-md text-[#2979FF]">
-        <a href="#" className="underline decoration-[#2979FF]">
+      <div className="text-lg mt-6 flex space-x-4 text-md text-[#2979FF]">
+        <a
+          href="#"
+          className="underline decoration-[#2979FF]"
+        >
           Privacy policy
         </a>
-        <a href="#" className="underline decoration-[#2979FF]">
+        <a
+          href="#"
+          className="underline decoration-[#2979FF]"
+        >
           Terms of service
         </a>
       </div>

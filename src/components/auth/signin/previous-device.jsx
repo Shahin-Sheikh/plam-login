@@ -1,6 +1,8 @@
 import { HiOutlineMail } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
 import { useLocation, useNavigate } from "react-router-dom";
+import { InputField } from "../../ui/input-field";
+import { PrimaryButton } from "../../ui/primary-button";
 
 export function PreviousDevice() {
   const location = useLocation();
@@ -29,7 +31,10 @@ export function PreviousDevice() {
       <div className="flex flex-col justify-center items-center w-full m-16">
         <div className="mb-6">
           <div className="w-35 h-25 flex items-center justify-center relative">
-            <img src="/logo.png" alt="Logo" />
+            <img
+              src="/logo.png"
+              alt="Logo"
+            />
           </div>
         </div>
 
@@ -40,24 +45,25 @@ export function PreviousDevice() {
         </div>
         <div>
           <div className="flex items-center justify-center mb-4 relative">
-            <HiOutlineMail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-            <input
+            <InputField
               type="email"
               placeholder="Enter your email"
-              className="w-[336.3px] h-[56.5px] pl-12 p-[14px] bg-black/30 text-white rounded-[16px] 
-                border border-white/12 flex items-center 
-                box-border flex-none order-2 self-stretch grow-0"
+              icon={
+                <HiOutlineMail
+                  size={21}
+                  className="text-[#FFFFFF]"
+                />
+              }
+              className="bg-[#1E1E2A] border rounded-lg border-transparent"
               value={selectedEmail}
               readOnly
             />
           </div>
 
-          <button
-            className="w-full max-w-sm p-4 bg-[#2979FF] text-white rounded-lg mt-4"
+          <PrimaryButton
+            text={`Continue to sign in into ${selectedEmail}`}
             onClick={() => handleCompleteAccount(selectedEmail)}
-          >
-            Continue to sign in {selectedEmail}
-          </button>
+          />
         </div>
       </div>
     </div>

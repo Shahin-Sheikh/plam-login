@@ -13,7 +13,7 @@ export function PrimaryButton({
   ...rest
 }) {
   const baseStyles =
-    "flex items-center justify-center w-full max-w-sm text-white rounded-lg transition-all duration-200";
+    "mt-6 font-bold flex items-center justify-center w-full max-w-sm text-white rounded-xl transition-all duration-200";
 
   const variantStyles = {
     primary: "bg-[#2979FF] hover:bg-[#1e62d8]",

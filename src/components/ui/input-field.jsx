@@ -12,9 +12,9 @@ export function InputField({
 }) {
   const wrapperStyles = "flex items-center justify-center mb-4 relative";
 
-  const baseInputStyles = `
+  const baseInputStyles = `text-lg
     w-[336.3px] h-[56.5px] p-[14px] 
-    bg-black/30 text-white rounded-[16px] 
+    bg-[] text-white rounded-[16px] 
     border border-white/12 
     flex items-center box-border flex-none order-2 self-stretch grow-0
     focus:outline-none focus:ring-2 focus:ring-[#2979FF]/50
@@ -30,7 +30,7 @@ export function InputField({
   return (
     <div className={`${wrapperStyles} ${className}`}>
       {icon && (
-        <span className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400">
+        <span className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white-500/40">
           {icon}
         </span>
       )}
