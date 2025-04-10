@@ -1,11 +1,57 @@
+import { useState } from "react";
 import { HiOutlineMail } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import { validateEmail } from "../../helper/validation/validation";
 import { InputField } from "../../ui/input-field";
 import { PrimaryButton } from "../../ui/primary-button";
 
 export function WithEmail() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [touched, setTouched] = useState(false);
+
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+
+    if (touched) {
+      if (!value) {
+        setError("Email is required");
+      } else if (!validateEmail(value)) {
+        setError("Please enter a valid email address");
+      } else {
+        setError("");
+      }
+    }
+  };
+
+  const handleBlur = () => {
+    setTouched(true);
+    if (!email) {
+      setError("Email is required");
+    } else if (!validateEmail(email)) {
+      setError("Please enter a valid email address");
+    } else {
+      setError("");
+    }
+  };
+
+  const handleContinue = () => {
+    setTouched(true);
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+    if (!validateEmail(email)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+    setError("");
+    navigate("/");
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center bg-gradient-to-b text-white px-4">
       <div className="flex items-center w-full max-w-sm m-8">
@@ -43,6 +89,9 @@ export function WithEmail() {
           <InputField
             type="email"
             placeholder="Enter your email"
+            value={email}
+            onChange={handleEmailChange}
+            onBlur={handleBlur}
             icon={
               <HiOutlineMail
                 size={21}
@@ -51,9 +100,11 @@ export function WithEmail() {
             }
           />
 
+          {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
+
           <PrimaryButton
             text="Continue"
-            onClick={() => navigate("/previous-device")}
+            onClick={handleContinue}
           />
 
           <div className="text-lg mt-6 flex space-x-4 text-md justify-center">
