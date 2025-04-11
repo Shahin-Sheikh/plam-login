@@ -17,7 +17,7 @@ export function InputField({
     bg-[] text-white rounded-[16px] 
     border border-white/12 
     flex items-center box-border flex-none order-2 self-stretch grow-0
-    focus:outline-none focus:ring-2 focus:ring-[#2979FF]/50
+    focus:outline-none focus:ring-2 focus:ring-[#F44336]/50
   `;
 
   const paddingStyles = icon ? "pl-12" : "pl-[14px]";

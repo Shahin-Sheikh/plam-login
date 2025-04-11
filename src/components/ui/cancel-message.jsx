@@ -1,14 +1,13 @@
-// src/components/CancelledPage.jsx
 import React from "react";
-import { useNavigate } from "react-router-dom"; // If using React Router
+import { useNavigate } from "react-router-dom";
+import { PrimaryButton } from "./primary-button";
 
 const CancelledPage = () => {
-  const navigate = useNavigate(); // Optional: for navigation
+  const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-      <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-6 text-center">
-        {/* Cancel Icon */}
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="max-w-md w-full bg-[#1E1E2A] rounded-lg shadow-lg p-6 text-center">
         <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4">
           <svg
             className="h-6 w-6 text-red-600"
@@ -26,34 +25,19 @@ const CancelledPage = () => {
           </svg>
         </div>
 
-        {/* Title */}
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">
+        <h1 className="text-2xl font-bold text-[#FFFFFF] mb-2">
           Operation Cancelled
         </h1>
 
-        {/* Description */}
-        <p className="text-gray-600 mb-6">
+        <p className="text-white/40 mb-6">
           The operation has been cancelled. If this was unexpected, please try
           again or contact support.
         </p>
 
-        {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button
-            onClick={() => navigate("/")} // Replace with your home route
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200"
-          >
-            Return Home
-          </button>
-          <button
-            onClick={() => window.location.reload()}
-            className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors duration-200"
-          >
-            Try Again
-          </button>
+          <PrimaryButton text="Return Home" onClick={() => navigate("/")} />
         </div>
 
-        {/* Optional Support Link */}
         <p className="mt-4 text-sm text-gray-500">
           Need help?{" "}
           <a
