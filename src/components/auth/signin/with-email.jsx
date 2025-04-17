@@ -49,7 +49,7 @@ export function WithEmail() {
       return;
     }
     setError("");
-    navigate("/");
+    navigate("/palm-scan");
   };
 
   return (
@@ -72,10 +72,7 @@ export function WithEmail() {
       <div className="flex flex-col justify-center items-center w-full m-16">
         <div className="mb-6">
           <div className="w-35 h-25 flex items-center justify-center relative">
-            <img
-              src="/logo.png"
-              alt="Logo"
-            />
+            <img src="/logo.png" alt="Logo" />
           </div>
         </div>
 
@@ -92,28 +89,17 @@ export function WithEmail() {
             value={email}
             onChange={handleEmailChange}
             onBlur={handleBlur}
-            icon={
-              <HiOutlineMail
-                size={21}
-                className="text-[#FFFFFF]"
-              />
-            }
+            icon={<HiOutlineMail size={21} className="text-[#FFFFFF]" />}
           />
 
           {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
 
-          <PrimaryButton
-            text="Continue"
-            onClick={handleContinue}
-          />
+          <PrimaryButton text="Continue" onClick={handleContinue} />
 
           <div className="text-lg mt-6 flex space-x-4 text-md justify-center">
             <p>
               New User?{" "}
-              <span
-                className="text-[#2979FF]"
-                onClick={() => navigate("/")}
-              >
+              <span className="text-[#2979FF]" onClick={() => navigate("/")}>
                 Create an account
               </span>
             </p>

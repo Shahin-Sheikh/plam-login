@@ -5,6 +5,7 @@ import { PreviousDevice } from "./components/auth/signin/previous-device";
 import { Signin } from "./components/auth/signin/signin";
 import { WithEmail } from "./components/auth/signin/with-email";
 import CancelledPage from "./components/ui/cancel-message";
+import { PalmScan } from "./components/auth/signin/palm-scan";
 
 function App() {
   return (
@@ -12,26 +13,12 @@ function App() {
       <div className="min-h-screen w-full bg-custom">
         <div className="block md:hidden w-full">
           <Routes>
-            <Route
-              path="/"
-              element={<Signin />}
-            />
-            <Route
-              path="/with-email"
-              element={<WithEmail />}
-            />
-            <Route
-              path="/previous-device"
-              element={<PreviousDevice />}
-            />
-            <Route
-              path="/complete-account"
-              element={<CompleteAccount />}
-            />
-            <Route
-              path="/cancelled"
-              element={<CancelledPage />}
-            />
+            <Route path="/" element={<Signin />} />
+            <Route path="/with-email" element={<WithEmail />} />
+            <Route path="/previous-device" element={<PreviousDevice />} />
+            <Route path="/palm-scan" element={<PalmScan />} />
+            <Route path="/complete-account" element={<CompleteAccount />} />
+            <Route path="/cancelled" element={<CancelledPage />} />
           </Routes>
         </div>
       </div>
